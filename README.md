@@ -1,3 +1,8 @@
+### Yadm
+`yadm clone` \
+`yadm decrypt`
+
+### Programs list
 i3-gaps \
 polybar \
 zsh \
