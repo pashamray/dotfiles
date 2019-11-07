@@ -16,5 +16,5 @@ pass \
 neowim \
 rofi \
 you-get \
-vlc \ 
+vlc \
 insomnia
