@@ -40,8 +40,11 @@ curl_close($curl); // Close request
 
 $data = json_decode($response);
 
-$temp = $data->main->temp;
-
-echo sprintf('%s°C', $temp);
+if ($data instanceof object) {
+    $temp = $data->main->temp;
+    echo sprintf('%s°C', $temp);
+} else {
+    echo 'undefined';
+}
 
 ?>

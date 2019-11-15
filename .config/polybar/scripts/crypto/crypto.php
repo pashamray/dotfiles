@@ -35,10 +35,12 @@ curl_close($curl); // Close request
 
 $data = json_decode($response)[0];
 
-//$symbol = $data->symbol;
-$price = round($data->price_usd, 2);
-
-echo sprintf('%s', $price);
+if ($data instanceof object) {
+    $price = round($data->price_usd, 2);
+    echo sprintf('%s', $price);
+} else {
+    echo 'undefined';
+}
 
 ?>
 
