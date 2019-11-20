@@ -35,15 +35,16 @@ curl_setopt_array($curl, array(
   CURLOPT_RETURNTRANSFER => 1         // ask for raw response instead of bool
 ));
 
+try {
+
 $response = curl_exec($curl); // Send the request, save the response
 curl_close($curl); // Close request
 
 $data = json_decode($response);
 
-if ($data instanceof object) {
     $temp = $data->main->temp;
     echo sprintf('%s°C', $temp);
-} else {
+} catch (\Exception $e) {
     echo 'undefined';
 }
 

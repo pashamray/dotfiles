@@ -280,12 +280,14 @@ mode "$mode_gaps_left" {
 bindsym Print exec shutter -f -e -o '~/Screenshots/%Y-%m-%d_%T_screenshot_$wx$h.jpg'
 bindsym Mod4+Print exec shutter -s -e -o '~/Screenshots/%Y-%m-%d_%T_screenshot_$wx$h.jpg'
 
+bindsym $mod+Shift+x exec i3lock --color "#222222"
+
 title_align center
 default_border none
 default_floating_border none
 
-gaps inner 10
-gaps outer 5
+gaps inner 5 
+gaps outer 0
 
 exec_always xcompmgr -c -n
 exec_always --no-startup-id ~/.config/polybar/launch.sh

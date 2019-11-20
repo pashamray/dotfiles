@@ -30,15 +30,16 @@ curl_setopt_array($curl, array(
   CURLOPT_RETURNTRANSFER => 1         // ask for raw response instead of bool
 ));
 
+try {
+
 $response = curl_exec($curl); // Send the request, save the response
 curl_close($curl); // Close request
 
 $data = json_decode($response)[0];
 
-if ($data instanceof object) {
     $price = round($data->price_usd, 2);
     echo sprintf('%s', $price);
-} else {
+} catch (\Exception $e) {
     echo 'undefined';
 }
 
