@@ -291,5 +291,5 @@ gaps outer 0
 
 exec_always xcompmgr -c -n
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec --no-startup-id ~/Telegram/Telegram -startintray
+exec_always --no-startup-id ~/Telegram/Telegram -startintray
 exec --no-startup-id firefox

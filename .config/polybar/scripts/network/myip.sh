@@ -1,2 +1,2 @@
-#!/bin/bash
-curl ifconfig.co
+#!/bin/sh
+wget -qO- ifconfig.co

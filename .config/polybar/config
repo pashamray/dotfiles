@@ -66,13 +66,14 @@ module-margin-right = 0
 ;font-1 = Unifont Medium:size=8:antialias=false;0
 ;font-2 = Siji Regular:size=11;1
 
-font-0 = iosevka ss01:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+font-0 = Tamzen:pixelsize=16;0
+font-1 = siji:pixelsize=10
+font-2 = cryptofont-webfont:pixelsize=10;1
+font-3 = FontAwesome5Brands:style=Solid:pixelsize=10;1
 
 modules-left = i3
 modules-center = xwindow
-modules-right = xkeyboard sp2 pulseaudio sp2 date sp2 powermenu
+modules-right = xkeyboard sp2 alsa sp2 date sp2 powermenu
 
 ;tray-position = right
 ;tray-padding = 2
@@ -122,15 +123,15 @@ module-margin-right = 0
 ;font-1 = Unifont Medium:size=8:antialias=false;0
 ;font-2 = Siji Regular:size=11;1
 
-font-0 = iosevka ss01:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
-font-3 = cryptofont-webfont:pixelsize=10;1
-font-4 = FontAwesome5Brands:style=Solid:pixelsize=10;1
+;font-0 = iosevka ss01:pixelsize=10;1
+font-0 = Tamzen:pixelsize=16;0
+font-1 = siji:pixelsize=10
+font-2 = cryptofont-webfont:pixelsize=10;1
+font-3 = FontAwesome5Brands:style=Solid:pixelsize=10;1
 
-modules-left = filesystem 
+modules-left = filesystem sp2 bitcoin sp2 ethereum sp2 weather
 modules-center =  
-modules-right = bitcoin sp2 ethereum sp2 weather sp2 memory sp2 cpu sp2 temperature sp2 eth sp2 myip sp2
+modules-right =  memory sp2 cpu sp2 temperature sp2 eth sp2 myip sp2
 
 tray-position = right
 tray-padding = 0
@@ -176,7 +177,7 @@ type = internal/fs
 interval = 25
 
 mount-0 = /
-mount-1 = /home
+;mount-1 = /home
 
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
@@ -282,15 +283,15 @@ card = intel_backlight
 
 [module/cpu]
 type = internal/cpu
-interval = 2
+interval = 0.5
 format-prefix = " "
 ;format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #f90000
-label = %percentage:2%%
+label = %percentage%%
 
 [module/memory]
 type = internal/memory
-interval = 2
+interval = 0.5
 format-prefix = " "
 ;format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #4bffdc
@@ -321,7 +322,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 [module/eth]
 type = internal/network
 interface = enp4s0 
-interval = 3.0
+interval = 3
 
 ;format-connected-underline = #55aa55
 format-connected-prefix = " "
@@ -380,8 +381,8 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 [module/alsa]
 type = internal/alsa
 
-format-volume = <label-volume> ;<bar-volume>
-label-volume = VOL
+format-volume = <label-volume>
+label-volume = VOL %percentage%%
 label-volume-foreground = ${root.foreground}
 
 format-muted-prefix = " "
@@ -398,11 +399,11 @@ bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
 bar-volume-indicator = |
-bar-volume-indicator-font = 2
+bar-volume-indicator-font = 1
 bar-volume-fill = ─
-bar-volume-fill-font = 2
+bar-volume-fill-font = 1
 bar-volume-empty = ─
-bar-volume-empty-font = 2
+bar-volume-empty-font = 1
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
@@ -440,7 +441,15 @@ animation-discharging-framerate = 750
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 0
+;thermal-zone = 0
+
+; Full path of temperature sysfs path
+; Use `sensors` to find preferred temperature source, then run
+; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
+; to find path to desired file
+; Default reverts to thermal zone setting
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon3/temp1_input
+
 warn-temperature = 60
 
 format = <ramp> <label>
@@ -492,7 +501,7 @@ format-prefix = " "
 format-prefix-font = 4
 label = %output%
 interval = 300
-exec=php ~/.config/polybar/scripts/crypto/crypto.php ethereum
+exec=~/.config/polybar/scripts/crypto/crypto.sh ethereum
 
 [module/bitcoin]
 type = custom/script
@@ -500,17 +509,17 @@ format-prefix = " "
 format-prefix-font = 4
 label = %output%
 interval = 300
-exec=php ~/.config/polybar/scripts/crypto/crypto.php bitcoin
+exec=~/.config/polybar/scripts/crypto/crypto.sh bitcoin
 
 [module/weather]
 type=custom/script
 interval=300
-exec=php ~/.config/polybar/scripts/weather/weather.php Odessa,UA 
+exec=~/.config/polybar/scripts/weather/weather.sh Odessa,UA 
 
 [module/myip]
 type=custom/script
 interval=5
-exec=php ~/.config/polybar/scripts/network/myip.php
+exec=~/.config/polybar/scripts/network/myip.sh
 
 [module/sp2]
 type=custom/text
