@@ -1,5 +1,7 @@
+# Dotfiles
+
 ### Yadm
-`yadm clone` \
+`yadm clone <URL>` \
 `yadm decrypt`
 
 ### Programs list
@@ -16,4 +18,8 @@ neowim \
 rofi \
 you-get \
 vlc \
-insomnia
+insomnia \
+entr
+
+#### nvim
+`:PlugInstall`
