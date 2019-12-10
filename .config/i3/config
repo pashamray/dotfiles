@@ -44,6 +44,7 @@ bindsym $mod+d exec "~/.config/rofi/bins/appsmenu"
 
 bindsym $mod+Shift+p exec "~/.config/rofi/bins/powermenu"
 bindsym $mod+Shift+s exec "~/.config/rofi/bins/scrotmenu"
+bindsym $mod+Shift+v exec "~/.config/rofi/bins/nmvpnmenu"
 bindsym $mod+Shift+x exec i3lock --color "#222222"
 
 # change focus

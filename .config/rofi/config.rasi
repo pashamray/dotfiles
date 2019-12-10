@@ -7,5 +7,5 @@ configuration {
   disable-history:    false;
   modi:               "drun,run,ssh,window";
   display-drun:       "apps";
-  columns: 2;
+  columns: 3;
 }
