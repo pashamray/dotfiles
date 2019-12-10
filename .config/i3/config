@@ -277,9 +277,8 @@ mode "$mode_gaps_left" {
         bindsym Escape mode "default"
 }
 
-bindsym Print exec shutter -f -e -o '~/Screenshots/%Y-%m-%d_%T_screenshot_$wx$h.jpg'
-bindsym Mod4+Print exec shutter -s -e -o '~/Screenshots/%Y-%m-%d_%T_screenshot_$wx$h.jpg'
-
+bindsym Print exec scrot '%Y-%m-%d_%T_screenshot_$wx$h.jpg' -e 'mv $f ~/Screenshots/'
+bindsym --release $mod+Print exec scrot '%Y-%m-%d_%T_screenshot_$wx$h.jpg' -s -e 'mv $f ~/Screenshots/'
 bindsym $mod+Shift+x exec i3lock --color "#222222"
 
 title_align center

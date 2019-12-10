@@ -19,7 +19,8 @@ rofi \
 you-get \
 vlc \
 insomnia \
-entr
+entr \
+scrot
 
 #### nvim
 `:PlugInstall`

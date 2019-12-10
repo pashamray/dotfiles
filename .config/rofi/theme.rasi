@@ -4,25 +4,25 @@
  **/
 * {
     selected-normal-foreground:  @lightbg;
-    foreground:                  rgba ( 255, 255, 255, 100 % );
+    foreground:                  #ebdbb2; // rgba ( 255, 255, 255, 100 % );
     normal-foreground:           @foreground;
     alternate-normal-background: @lightbg;
-    red:                         rgba ( 220, 50, 47, 100 % );
+    red:                         #cc241d; //rgba ( 220, 50, 47, 100 % );
     selected-urgent-foreground:  @background;
-    blue:                        rgba ( 38, 139, 210, 100 % );
+    blue:                        #458588; //rgba ( 38, 139, 210, 100 % );
     urgent-foreground:           @red;
     alternate-urgent-background: @lightbg;
     active-foreground:           @blue;
-    lightbg:                     rgba ( 36, 36, 36, 100 % );
+    lightbg:                     #32302f; // rgba ( 36, 36, 36, 100 % );
     selected-active-foreground:  @background;
     alternate-active-background: @lightbg;
-    background:                  rgba ( 34, 34, 34, 100 % );
+    background:                  #282828; //rgba ( 34, 34, 34, 100 % );
     alternate-normal-foreground: @foreground;
     normal-background:           @background;
-    lightfg:                     rgba ( 88, 104, 117, 100 % );
+    lightfg:                     #fbf1c7; //rgba ( 88, 104, 117, 100 % );
     selected-normal-background:  @lightfg;
     border-color:                @foreground;
-    spacing:                     2;
+    spacing:                     20;
     separatorcolor:              @lightbg;
     urgent-background:           @background;
     selected-urgent-background:  @red;
@@ -59,7 +59,7 @@ listview {
 }
 element {
     border:  0;
-    padding: 1px ;
+    padding: 10px ;
 }
 element normal.normal {
     background-color: @normal-background;
