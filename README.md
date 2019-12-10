@@ -20,7 +20,8 @@ you-get \
 vlc \
 insomnia \
 entr \
-scrot
+scrot \
+https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
 
 #### nvim
 `:PlugInstall`

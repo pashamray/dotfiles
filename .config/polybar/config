@@ -73,7 +73,7 @@ font-3 = FontAwesome5Brands:style=Solid:pixelsize=10;1
 
 modules-left = i3
 modules-center = xwindow
-modules-right = xkeyboard sp2 alsa sp2 date sp2 powermenu
+modules-right = xkeyboard sp2 alsa sp2 date 
 
 ;tray-position = right
 ;tray-padding = 2
