@@ -5,6 +5,7 @@
 `yadm decrypt`
 
 ### Programs list
+lightdm \
 i3-gaps \
 polybar \
 zsh \
@@ -21,7 +22,10 @@ vlc \
 insomnia \
 entr \
 scrot \
-https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
+typora \
+https://gitlab.com/vahnrr/rofi-menus \
+https://github.com/PapirusDevelopmentTeam/papirus-icon-theme \
+mupdf
 
 #### nvim
 `:PlugInstall`
