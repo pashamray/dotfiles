@@ -282,9 +282,11 @@ mode "$mode_gaps_left" {
         bindsym Escape mode "default"
 }
 
-bindsym Print exec scrot '%Y-%m-%d_%T_screenshot_$wx$h.jpg' -e 'mv $f ~/Screenshots/'
-bindsym --release $mod+Print exec scrot '%Y-%m-%d_%T_screenshot_$wx$h.jpg' -s -e 'mv $f ~/Screenshots/'
+focus_follows_mouse no
 
+#bindsym Print exec scrot '%Y-%m-%d_%T_screenshot_$wx$h.jpg' -e 'mv $f ~/Screenshots/'
+#bindsym --release $mod+Print exec scrot '%Y-%m-%d_%T_screenshot_$wx$h.jpg' -s -e 'mv $f ~/Screenshots/'
+bindsym --release $mod+Print exec bash ~/.scripts/scrot2ftp.sh
 
 title_align center
 default_border none
@@ -292,6 +294,8 @@ default_floating_border none
 
 gaps inner 5 
 gaps outer 0
+
+exec_always --no-startup-id xrandr --output DP-0 --auto --primary --output HDMI-0 --auto --left-of DP-0
 
 exec_always xcompmgr -c -n
 exec_always --no-startup-id ~/.config/polybar/launch.sh

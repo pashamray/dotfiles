@@ -1,0 +1,17 @@
+shell git clone https://github.com/stark/siji && cd siji
+shell ./install.sh -d ~/.fonts
+shell chmod +x Telegram
+shell vim sitemap.xml
+shell neovim sitemap.xml
+mkdir NordicEnergy
+shell git clone https://github.com/Nordic-Energy/MotorControlBoard.git
+search hand
+search dac
+open_with 
+delete
+shell atools -x qmk_firmware-handwired-dactyl_manuform-4x5-layout_mine.json.zip 
+
+shell git init
+shell git remote add origin git@gitlab.com:pashamray/blog.git
+touch .gitignore
+rename __posts

@@ -1,8 +1,15 @@
 # Dotfiles
 
 ### Yadm
-`yadm clone <URL>` \
-`yadm decrypt`
+```bash
+$ yadm clone <URL>
+$ yadm decrypt
+```
+
+```bash
+$ yadm encrypt
+$ yadm push
+```
 
 ### Programs list
 lightdm \
@@ -25,7 +32,8 @@ scrot \
 typora \
 https://gitlab.com/vahnrr/rofi-menus \
 https://github.com/PapirusDevelopmentTeam/papirus-icon-theme \
-mupdf
+mupdf \
+notify-osd
 
 #### nvim
 `:PlugInstall`

@@ -502,7 +502,7 @@ format-prefix = " "
 format-prefix-font = 4
 label = %output%
 interval = 300
-exec=~/.config/polybar/scripts/crypto/crypto.sh ethereum
+exec=~/.config/polybar/scripts/crypto/cryptonator.sh eth
 
 [module/bitcoin]
 type = custom/script
@@ -510,7 +510,7 @@ format-prefix = " "
 format-prefix-font = 4
 label = %output%
 interval = 300
-exec=~/.config/polybar/scripts/crypto/crypto.sh bitcoin
+exec=~/.config/polybar/scripts/crypto/cryptonator.sh btc
 
 [module/weather]
 type=custom/script
