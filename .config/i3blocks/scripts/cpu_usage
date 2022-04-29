@@ -1,0 +1,7 @@
+#!/bin/bash
+
+idle="$(mpstat 1 1 -P ALL | sed -n -e '4{p;q}' | awk '{print $NF}')"
+used=$(echo 100 - "$idle" | sed -u 's/,/./g' | bc)
+used_rounded=$(printf %.0f "$used")
+printf "%s%%\n\n%s\n" "$used_rounded" 
+
