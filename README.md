@@ -21,4 +21,5 @@ https://github.com/adi1090x/rofi
 
 ---
 
-chsh /bin/fish
+sudo fc-cache
+sudo chsh -s /bin/fish
