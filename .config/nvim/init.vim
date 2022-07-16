@@ -19,7 +19,9 @@ Plug 'vim-airline/vim-airline'
 call plug#end()
 
 syntax enable
-set number relativenumber
+set number 
+set relativenumber
+set smarttab
 colorscheme gruvbox
 set background=dark
 

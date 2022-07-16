@@ -14,29 +14,47 @@ markup=pango
 [cpu_usage]
 label= 
 interval=5
-color=#990000
+#color=#990000
 interval=2
 
 [memory]
 label= 
-color=#006600
+#color=#006600
 interval=2
 
 # Query my default IP address only on startup
 [ip]
 command=wget -qO - icanhazip.com
-interval=10
-color=#91E78B
+interval=60
+#color=#91E78B
 
 # Guess the weather hourly
 [weather]
+label=Od 
 command=curl -H 'Accept-Language: ru' -Ss 'https://wttr.in/Odessa?format=%c+%t' | xargs echo
 #command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
 interval=3600
-color=#A4C2F4
+#color=#A4C2F4
+
+[weather]
+label=I-F 
+command=curl -H 'Accept-Language: ru' -Ss 'https://wttr.in/Ivano-Frankovsk?format=%c+%t' | xargs echo
+#command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
+interval=3600
+#color=#A4C2F4
 
 # Update time every 5 seconds
 [time]
 label= 
 command=date +'%a, %d %b %H:%M:%S'
+interval=1
+
+[battery-plus]
+#command=$SCRIPT_DIR/battery-plus
+markup=pango
+instance=BAT0
+interval=30
+
+[lang]
+command=xkblayout-state print %s | xargs
 interval=1

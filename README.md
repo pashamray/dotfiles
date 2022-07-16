@@ -5,10 +5,11 @@ keepassxc
 rofi
 alacritty
 feh
+fzf
+ripgrep
 git
 fish 
 nvim
-ranger
 scrot
 sysstat
 i3blocks
@@ -17,6 +18,7 @@ tmux
 pulseaudio-bluetooth 
 yadm
 
+https://github.com/gokcehan/lf
 https://github.com/adi1090x/rofi
 https://github.com/nonpop/xkblayout-state
 
