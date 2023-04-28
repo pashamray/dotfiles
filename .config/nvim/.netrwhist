@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/moroz/.config/fish/conf.d'
-let g:netrw_dirhist_2='/home/moroz/projects/Gateway'
-let g:netrw_dirhist_3='/home/moroz/.scripts'
-let g:netrw_dirhist_4='/home/moroz/.config/i3'
-let g:netrw_dirhist_5='/etc/netplan'

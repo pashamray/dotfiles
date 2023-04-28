@@ -1,7 +1,8 @@
+i3-wm
+polybar
 telegram
-dicord
-zoom
 keepassxc
+dmenu
 rofi
 alacritty
 feh
@@ -9,20 +10,22 @@ fzf
 ripgrep
 git
 fish 
-nvim
+neovim
+astronvim
 scrot
 sysstat
-i3blocks
 vlc 
 tmux
 pulseaudio-bluetooth 
+pavucontrol
+pa-applet
 yadm
+brightnessctl
+unzip
+python-pip
 
-https://github.com/gokcehan/lf
-https://github.com/adi1090x/rofi
-https://github.com/nonpop/xkblayout-state
+https://github.com/fairyglade/ly
 
 ---
-nvim :PlugInstall
 sudo fc-cache
 sudo chsh -s /bin/fish
