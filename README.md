@@ -1,3 +1,17 @@
+# Dotfiles
+
+### Yadm
+```bash
+$ yadm clone <URL>
+$ yadm decrypt
+```
+
+```bash
+$ yadm encrypt
+$ yadm push
+```
+
+```
 i3-wm
 polybar
 telegram
@@ -29,3 +43,4 @@ https://github.com/fairyglade/ly
 ---
 sudo fc-cache
 sudo chsh -s /bin/fish
+```
