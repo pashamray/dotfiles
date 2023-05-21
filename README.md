@@ -37,6 +37,7 @@ yadm
 brightnessctl
 unzip
 python-pip
+notify-osd
 
 https://github.com/fairyglade/ly
 
